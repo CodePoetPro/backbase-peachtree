@@ -1,0 +1,13 @@
+<div [style.borderLeftColor]="color" class="transaction">
+    <div>{{date | date : 'MMM d'}}</div>
+    <img [src]="image">
+    <div class="transaction_description">
+        <div class="transaction_description--title">
+            {{title}}
+        </div>
+        <div class="transaction_description--type">
+            {{description}}
+        </div>
+    </div>
+    <div class="transaction_amount">-{{amount}}</div>
+</div>

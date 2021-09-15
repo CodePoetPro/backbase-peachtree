@@ -1,0 +1,20 @@
+.search{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap : 40px;
+    &_sort{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_group{
+            button {
+                border-radius: 0px;
+                border: solid 1px grey;
+                margin: -1px;
+                padding: 5px 20px;
+                background: #fff;
+                color: grey;
+            }
+        }
+    }
+}

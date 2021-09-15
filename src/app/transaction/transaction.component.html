@@ -1,0 +1,37 @@
+<main class="transaction">
+    <div class="container">
+        <div class="transaction_layout">
+            <app-card title="Make a Transfer" icon="../../assets/icons/arrows.svg">
+                <section class="transfer_form">
+                    <p class="transfer_form_item">
+                        <label>From account</label> 
+                        <select>
+                            <option>Free Checking(4692) - $5824</option>
+                        </select>
+                    </p>
+                    <p class="transfer_form_item">
+                        <label>to account</label> 
+                        <select>
+                            <option>Georgia Power Electric Company</option>
+                        </select>
+                    </p>
+                    <p class="transfer_form_item">
+                        <label>amount</label>
+                        <input placeholder="$ 0.00">
+                    </p>
+                    <div class="transfer_form_actions">
+                        <button class="transfer_form_button">
+                            submit
+                        </button>
+                    </div>
+                </section>
+            </app-card>
+            <app-card title="Recent Transactions" icon="../../assets/icons/briefcase.svg">
+                <app-search-filter (filter)="handleFilterChange($event)"></app-search-filter>
+                <div class="transactions">
+                    <app-transaction-item *ngFor="let transaction of transactions | search:searchFilter.search" [date]="transaction.transactionDate" [color]="transaction.categoryCode" [image]="transaction.merchantLogo" [title]="transaction.merchant" [description]="transaction.transactionType" [amount]="transaction.amount"> </app-transaction-item>
+                </div>
+            </app-card>
+        </div>
+    </div>
+</main>

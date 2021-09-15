@@ -1,0 +1,29 @@
+.card{
+    background-color: #fff;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    &_header{
+        background-color: #0C8397;
+        color: rgba(255, 255, 255, 0.795);
+        height: 40px;
+        display: grid;
+        grid-template-columns: 30px auto;
+        padding: 0 10px;
+        justify-items: center;
+        align-items: center;
+        font-size: medium;
+        &_icon{
+            width: 20px;
+            img{
+                width: 100%;
+                opacity: 0.6;
+            }
+        }
+        &_text{
+            margin-left: -30px;
+        }
+    }
+    &_content{
+        padding: 20px;
+        min-height: 300px;
+    }
+}

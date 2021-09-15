@@ -1,0 +1,39 @@
+.transaction {
+    margin-top: 50px;
+    &_layout{
+        display: grid;
+        grid-template-columns: 2fr 5fr;
+        grid-gap : 40px
+    }
+}
+
+.transfer_form{
+    &_item{
+        label {
+            text-transform: uppercase;
+            display: block;
+            font-size: 12px;
+        }
+        input, select {
+            width: 100%;
+        }
+    }
+    &_actions{
+        display: flex;
+        justify-content: right;
+    }
+    &_button{
+        border: none;
+        background-color: #EE7033;
+        color: #fff;
+        padding: 10px 40px;
+        text-transform: uppercase;
+        border-radius: 5px;
+    }
+}
+
+.transactions{
+    margin-top: 40px;
+    max-height: 498px;
+    overflow-y: scroll;
+}
