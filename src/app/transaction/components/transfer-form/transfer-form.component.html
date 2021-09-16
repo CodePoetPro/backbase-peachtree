@@ -13,7 +13,7 @@
         </p>
         <p class="transfer_form_item">
             <label>amount</label>
-            <input formControlName="amount" type="number" min="1" [max]="account?.balance" placeholder="$ 0.00">
+            <input formControlName="amount" type="number" min="1" [max]="account?.balance ? account.balance : 0" placeholder="$ 0.00">
         </p>
         
     </ng-container>
