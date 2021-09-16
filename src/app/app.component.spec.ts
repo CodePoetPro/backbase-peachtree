@@ -1,11 +1,19 @@
 import { TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core';
+import { TransactionModule } from './transaction/transaction.module';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+      ],
+      imports: [
+        BrowserModule,
+        CoreModule,
+        TransactionModule
       ],
     }).compileComponents();
   });
@@ -22,10 +30,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('peachtree-bank');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('peachtree-bank app is running!');
-  });
 });
