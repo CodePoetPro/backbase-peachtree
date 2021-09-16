@@ -1,0 +1,34 @@
+<form [formGroup]="transferForm" (ngSubmit)="handleSubmit()" class="transfer_form">
+    <ng-container *ngIf="!showPreview">
+        <p class="transfer_form_item">
+            <label>From account</label> 
+            <input readonly [value]="getAccountDetail">
+        </p>
+        <p class="transfer_form_item">
+            <label>to account</label> 
+            <select formControlName="to">
+                <option [value]="null" hidden selected>Select Beneficiary</option>
+                <option [value]="beneficiary.id" *ngFor="let beneficiary of beneficiaries">{{beneficiary.merchant}}</option>
+            </select>
+        </p>
+        <p class="transfer_form_item">
+            <label>amount</label>
+            <input formControlName="amount" type="number" min="1" [max]="account?.balance" placeholder="$ 0.00">
+        </p>
+        
+    </ng-container>
+    <section *ngIf="showPreview" class="preview">
+        <p class="preview_text">
+            Please confirm the transfer of <b>{{transferPayload?.amount | currency : account.currency}}</b>
+            to <b>{{transferPayload?.merchant}}</b>?
+        </p>
+    </section>
+    <div class="transfer_form_actions">
+        <button *ngIf="showPreview" (click)="showPreview = false" class="transfer_form_button transfer_form_button--cancel">
+            Cancel
+        </button>
+        <button type="submit" [disabled]="transferForm.invalid" class="transfer_form_button">
+             {{showPreview ? 'transfer' : 'submit'}}
+        </button>
+    </div>
+</form>

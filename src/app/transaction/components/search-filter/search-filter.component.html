@@ -1,11 +1,14 @@
 <form class="search" [formGroup]="form">
-    <input formControlName="search" placeholder="Search by typing...">
+    <div class="search_input">
+        <input formControlName="search" placeholder="Search by typing...">
+        <img *ngIf="showClear" (click)="clearSearch()" class="search_input_cancel" src="../../../../assets/icons/cancel.svg">
+    </div>
     <div class="search_sort">
-        <span>Sort by </span>
+        <span class="search_sort_text">Sort by </span>
         <div class="search_sort_group">
-            <button>DATE</button>
-            <button>BENEFICIARY</button>
-            <button>AMOUNT</button>
+            <app-filter-toggle (sortOut)="handleSort($event, 'date')" text="DATE" sort="dsc"></app-filter-toggle>
+            <app-filter-toggle (sortOut)="handleSort($event, 'beneficiary')" text="BENEFICIARY"></app-filter-toggle>
+            <app-filter-toggle (sortOut)="handleSort($event, 'amount')" text="AMOUNT"></app-filter-toggle>
         </div>
     </div>
 </form>

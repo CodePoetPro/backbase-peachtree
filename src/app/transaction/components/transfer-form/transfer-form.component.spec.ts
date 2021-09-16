@@ -1,17 +1,18 @@
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CoreModule } from 'src/app/core';
+import { account } from 'src/app/core/mock/account';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { TransactionComponent } from '../../transaction.component';
 import { FilterToggleComponent } from '../filter-toggle/filter-toggle.component';
 import { SearchFilterComponent } from '../search-filter/search-filter.component';
-import { TransferFormComponent } from '../transfer-form/transfer-form.component';
+import { TransactionItemComponent } from '../transaction-item/transaction-item.component';
 
-import { TransactionItemComponent } from './transaction-item.component';
+import { TransferFormComponent } from './transfer-form.component';
 
-describe('TransactionItemComponent', () => {
-  let component: TransactionItemComponent;
-  let fixture: ComponentFixture<TransactionItemComponent>;
+describe('TransferFormComponent', () => {
+  let component: TransferFormComponent;
+  let fixture: ComponentFixture<TransferFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -26,8 +27,10 @@ describe('TransactionItemComponent', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TransactionItemComponent);
+    fixture = TestBed.createComponent(TransferFormComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges();
+    component.account = account;
     fixture.detectChanges();
   });
 

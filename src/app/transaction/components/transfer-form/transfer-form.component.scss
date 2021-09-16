@@ -1,0 +1,44 @@
+.transfer_form{
+    position: relative;
+    &_item{
+        label {
+            text-transform: uppercase;
+            display: block;
+            font-size: 12px;
+        }
+        input, select {
+            width: 100%;
+        }
+    }
+    &_actions{
+        display: flex;
+        justify-content: right;
+    }
+    &_button{
+        border: none;
+        background-color: #EE7033;
+        color: #fff;
+        padding: 10px 35px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        &:disabled{
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        &--cancel{
+            background-color: #fff;
+            color: #EE7033;
+            border: solid 1px #EE7033;
+            margin-right: 10px;
+        }
+    }
+}
+
+.preview{
+    height: 100%;
+    padding: 20px 0px;
+    &_text{
+        font-size: x-large;
+        font-weight: 300;
+    }
+}

@@ -6,12 +6,14 @@ import { TransactionItemComponent } from './components/transaction-item/transact
 import { SearchFilterComponent } from './components/search-filter/search-filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core';
+import { TransferFormComponent } from './components/transfer-form/transfer-form.component';
+import { FilterToggleComponent } from './components/filter-toggle/filter-toggle.component';
 
 
 
 
 @NgModule({
-  declarations: [TransactionComponent, TransactionItemComponent, SearchFilterComponent],
+  declarations: [TransactionComponent, TransactionItemComponent, SearchFilterComponent, TransferFormComponent, FilterToggleComponent],
   imports: [
     CommonModule,
     CoreModule,

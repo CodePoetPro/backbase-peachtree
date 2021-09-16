@@ -3,9 +3,22 @@
     &_layout{
         display: grid;
         grid-template-columns: 2fr 5fr;
-        grid-gap : 40px
+        grid-gap : 40px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+        
+        @media (min-width: 769px) and (max-width: 900px) {
+            grid-template-columns: 1fr 1fr;
+        }
     }
+   
 }
+
+
+
+
 
 .transfer_form{
     &_item{
@@ -33,7 +46,9 @@
 }
 
 .transactions{
+    padding: 1px;
     margin-top: 40px;
-    max-height: 498px;
+    max-height: 499px;
+    min-height: 150px;
     overflow-y: scroll;
 }
