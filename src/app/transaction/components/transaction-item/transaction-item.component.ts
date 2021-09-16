@@ -13,6 +13,7 @@ export class TransactionItemComponent implements OnInit {
   @Input() title!: string;
   @Input() description!: string;
   @Input() amount!: string;
+  @Input() currency!: string;
 
   constructor() { }
 
