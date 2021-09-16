@@ -22,4 +22,11 @@ describe('CardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have display title', ()=>{
+    component.title = "Make Transfer";
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.card_header_text').textContent.trim()).toBe('Make Transfer');
+  })
 });
