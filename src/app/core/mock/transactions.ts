@@ -1,6 +1,6 @@
 import { Transaction } from "../models";
 
-export const data : Transaction[] = [
+const transaction: Transaction[] = [
   {
     "amount": "82.02",
     "categoryCode": "#12a580",
@@ -81,6 +81,7 @@ export const data : Transaction[] = [
     "transactionDate": 1476455042000,
     "transactionType": "Online Transfer"
   }
- ];
+];
 
-  
+export { transaction }
+
