@@ -1,6 +1,6 @@
 export interface searchFilter {
     search: string;
-    dateSort: boolean;
-    beneficiarySort: boolean;
-    amountSort: boolean;
+    dateSort: string;
+    beneficiarySort: string;
+    amountSort: string;
   }
