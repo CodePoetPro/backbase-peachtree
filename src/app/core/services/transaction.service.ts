@@ -1,14 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import * as transaction  from '../mock/transactions'
-import { BehaviorSubject, Subject } from 'rxjs';
- 
-@Injectable()
+import { transaction } from '../mock/transactions'
+import { account } from '../mock/account'
+import { BehaviorSubject } from 'rxjs';
+import { beneficiaries } from '../mock/beneficiaries';
+import { Transaction } from '..';
+
+@Injectable({providedIn : 'root'})
+
 export class TransactionService {
+  
+  transactions = new BehaviorSubject(transaction);
+  account = new BehaviorSubject(account);
+  beneficiaries = new BehaviorSubject(beneficiaries);
+  constructor() { }
 
-  constructor(private http: HttpClient) { }
+  getTransactions() {
+    return this.transactions;
+  }
 
-  getTransactions(){
-    return new BehaviorSubject(transaction);
+  getAccount() {
+    return this.account;
+  }
+
+  getBeneficieries() {
+    return this.beneficiaries;
+  }
+
+  transfer(transferPayload : Transaction) {
+    console.log("transfer service");
+    const newAccount = this.account.value;
+    newAccount.balance -= Number(transferPayload.amount);
+    this.account.next(newAccount);
+    this.transactions.next([{...transferPayload}, ...this.transactions.value]);
   }
 }
